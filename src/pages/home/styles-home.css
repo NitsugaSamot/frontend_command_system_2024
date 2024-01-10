@@ -1,0 +1,18 @@
+.container-command {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre las columnas */
+}
+
+.menu-by-category{
+    width: 100%;
+    padding: 1rem;
+}
+
+.div-categories{
+    display: flex;
+}
+
+.div-menu{
+    display: flex;
+}
