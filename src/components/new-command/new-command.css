@@ -1,0 +1,10 @@
+.div-command{
+    border-color: brown;
+    background-color: rgb(242, 239, 228);
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.close-button{
+    padding: 2rem;
+}

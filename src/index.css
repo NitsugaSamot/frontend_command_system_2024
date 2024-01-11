@@ -93,6 +93,12 @@ button:focus-visible {
   margin-top: 4rem;
 }
 
+@media all and (max-width: 599px){
+  .logo{
+    width: 12rem;
+  }
+}
+
 .modal {
   position: absolute;
   top: 50%;

@@ -6,3 +6,14 @@
 .container-header{
     background-color: brown;
 }
+
+@media all and (max-width: 599px){
+    .logo-header{
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .nav-buttons{
+        justify-content: center;
+    }
+}

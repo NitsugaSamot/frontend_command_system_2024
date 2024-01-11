@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import clienteAxios from '../../config/clienteAxios';
 import Header from '../header/Header';
-
+import "./commands-styles.css"
 
 // ... (imports y código anterior)
 
@@ -21,7 +21,7 @@ function Commands() {
   return (
     <>
       <Header />
-      <div className="flex flex-wrap">
+      <div className="text-center flex flex-wrap">
         {commands.map(command => (
           <div key={command._id} className="p-5 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
             <div className="bg-gray-200 p-4 rounded mb-4">

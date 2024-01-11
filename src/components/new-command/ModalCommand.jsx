@@ -3,6 +3,7 @@ import { useState } from "react";
 import clienteAxios from "../../config/clienteAxios";
 import Alert from "../alert/Alert";
 import { useNavigate } from "react-router-dom";
+import "./new-command.css"
 
 function ModalCommand({closeCreateCommandModal, commandItems,}) {
   const [waiter, setWaiter] = useState('');
@@ -60,7 +61,7 @@ function ModalCommand({closeCreateCommandModal, commandItems,}) {
     <ReactModal
       isOpen={true}
       onRequestClose={closeCreateCommandModal}
-      className="modal"
+      className="modal text-center mx-auto max-w-3xl bg-gray-200 rounded-lg p-8 mt-10"
       overlayClassName="overlay"
     >
       <div className="modal-content">
@@ -75,18 +76,18 @@ function ModalCommand({closeCreateCommandModal, commandItems,}) {
 {msg && <Alert alert={alert} />}
 
 <form
-      className="mx-auto max-w-3xl bg-gray-200 rounded-lg p-8 mt-10"
+      className=""
       onSubmit={handleSubmit}
   >
-      <div>
-        <h2 className="text-xl font-bold mb-4">Elementos de la Comanda</h2>
-          <ul>
+      <div className="div-command">
+        <h2 className="text-xl font-bold mb-4">Comanda</h2>
+          <div>
           {Object.values(commandItems).map((commandItem, index) => (
-            <li key={index}>
-              {commandItem.quantity} {commandItem.name} - ${commandItem.subtotal} - 
-            </li>
+            <p key={index}>
+              {commandItem.quantity} {commandItem.name} - ${commandItem.subtotal} 
+            </p>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="my-5">
           <label 
