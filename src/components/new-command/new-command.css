@@ -1,10 +1,13 @@
 .div-command{
     border-color: brown;
-    background-color: rgb(242, 239, 228);
-    margin-top: 1rem;
+    background-color: rgb(224, 199, 168);
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 3%;
+    margin-top: 2rem;
     padding: 1rem;
 }
 
 .close-button{
-    padding: 2rem;
+    background-color: rgb(63, 88, 162);
 }

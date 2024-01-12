@@ -3,7 +3,6 @@ import ProtectedRoutes from './layouts/ProtectedRoutes';
 import AuthLayout from './layouts/AuthLayout';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
-import CreateMenu from './components/create-menu/CreateMenu';
 import Commands from './components/commands/Commands';
 import { AuthProvider } from './context/AuthProvider';
 
@@ -20,7 +19,6 @@ function App() {
 
           <Route path="/app" element={<ProtectedRoutes/>}>
                 <Route index element={<Home/>}/>
-                <Route path="new-menu" element={<CreateMenu />} />
                 <Route path="commands" element={<Commands />} />
             </Route>
     

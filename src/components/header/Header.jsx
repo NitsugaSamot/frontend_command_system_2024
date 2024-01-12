@@ -13,7 +13,7 @@ function Header() {
     }
 
     return (
-        <header className="px-4 py-5 bg-white border-b">
+        <header className="px-4 py-5 bg-whitesmoke border-b">
             <div className="nav-header md:flex md:justify-between">
                 <h2 className="text-4xl text-red-400 font-black text-center mb-5 md:mb-0">
                     <Link

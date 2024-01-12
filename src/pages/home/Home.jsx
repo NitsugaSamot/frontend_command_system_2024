@@ -106,7 +106,7 @@ const closeCreateCommandModal = () => {
 
       <Header />
 
-       {/* <div className="command mt-8">
+       <div className="command mt-8">
           <button className="bg-blue-500 text-white px-2 py-1 rounded" onClick={openMenuModal}>
               Nuevo Menú
           </button>
@@ -114,7 +114,7 @@ const closeCreateCommandModal = () => {
           {isModalMenuOpen && (
                <ModalMenu closeMenuModal={closeMenuModal} />
           )}
-       </div> */}
+       </div>
  
             <div className="flex flex-wrap categories-div">
               {categoryItems.map((categoryItem, index) => (

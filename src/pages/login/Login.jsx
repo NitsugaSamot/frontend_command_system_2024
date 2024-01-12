@@ -60,7 +60,7 @@ const Login = () => {
 
 
             <form 
-                className="my-10 bg-white  rounded-lg p-10"
+                className="my-10 bg-whitesmoke rounded-lg p-10"
                 onSubmit={handleSubmit}
                 >
                 <div className="my-5">
