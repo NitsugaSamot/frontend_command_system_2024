@@ -26,7 +26,7 @@ function ModalCommand({closeCreateCommandModal, commandItems}) {
     setAlert({});
 
     try {
-      const { data } = await clienteAxios.post('/command', { table, diners, waiter, command: Object.values(commandItems) });
+      const { data } = await clienteAxios.post('/api/command', { table, diners, waiter, command: Object.values(commandItems) });
 
       setAlert({
         msg: data.msg,
