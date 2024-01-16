@@ -36,6 +36,7 @@ const AuthProvider = ({children}) => {
                 setAuth(data)
                 navigate('/app')
             } catch (error) {
+                console.log(error)
                 setAuth({})
             } finally{
                  setLoading(false) 
