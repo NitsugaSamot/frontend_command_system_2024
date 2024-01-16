@@ -10,22 +10,38 @@ const ProtectedRoutes = () => {
 
   return (
     <>
-        {auth._id ? 
-        (
-          <div >
-            {/* <Home/> */}
-
-            <div>
-
-
-              <main >
-                <Outlet/>
-              </main>
-            </div>
+      {auth._id ? (
+        <div>
+          <div>
+            <main>
+              <Outlet />
+            </main>
           </div>
-        ) : <Navigate to='/'/>}
+        </div>
+      ) : (
+        <Navigate to="/" />
+      )}
     </>
-  )
+  );
+  
+  // return (
+  //   <>
+  //       {auth._id ? 
+  //       (
+  //         <div >
+  //           {/* <Home/> */}
+
+  //           <div>
+
+
+  //             <main >
+  //               <Outlet/>
+  //             </main>
+  //           </div>
+  //         </div>
+  //       ) : <Navigate to='/'/>}
+  //   </>
+  // )
 }
 
 export default ProtectedRoutes

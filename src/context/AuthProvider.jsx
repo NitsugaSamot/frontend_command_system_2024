@@ -40,9 +40,7 @@ const AuthProvider = ({children}) => {
                 setAuth({})
             } finally{
                  setLoading(false) 
-            }
-
-            
+            }            
         }
         authenticateUser()
     }, [])
