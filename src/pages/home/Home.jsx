@@ -44,7 +44,7 @@ const closeCreateCommandModal = () => {
 
 
   useEffect(() => {
-    clienteAxios('/api/menu/categories')
+    clienteAxios('/menu/categories')
       .then(response => {
         const formattedCategories = response.data.map(category => capitalizeFirstLetter(category));
         setCategoryItems(formattedCategories);
@@ -54,7 +54,7 @@ const closeCreateCommandModal = () => {
 
   useEffect(() => {
     if (selectedCategory) {
-      clienteAxios(`/api/menu/categories/${selectedCategory}`)
+      clienteAxios(`/menu/categories/${selectedCategory}`)
         .then(response => setMenuItems(response.data))
         .catch(error => console.error('Error:', error));
     }
