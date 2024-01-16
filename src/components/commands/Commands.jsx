@@ -9,7 +9,7 @@ function Commands() {
   const [commands, setCommands] = useState([]);
 
   useEffect(() => {
-    clienteAxios.get('/api/command')
+    clienteAxios.get('/command')
       .then(response => {
         setCommands(response.data);
       })
