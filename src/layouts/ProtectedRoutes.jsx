@@ -13,7 +13,7 @@ const ProtectedRoutes = () => {
         {auth._id ? 
         (
           <div >
-            {/* <Home/> */}
+            <Home/>
 
             <div>
 
