@@ -10,21 +10,21 @@ import { AuthProvider } from './context/AuthProvider';
 function App() {
   return (
     <BrowserRouter>
-    <AuthProvider>
+        <AuthProvider>
 
-        <Routes>
-          <Route path="/" element={<AuthLayout/>}>
-            <Route index element={<Login />} />
-          </Route>
+            <Routes>
+              <Route path="/" element={<AuthLayout/>}>
+                <Route index element={<Login />} />
+              </Route>
 
-          <Route path="/app" element={<ProtectedRoutes/>}>
-                <Route index element={<Home/>}/>
-                <Route path="commands" element={<Commands />} />
-            </Route>
-    
-        </Routes>
+              <Route path="/app" element={<ProtectedRoutes/>}>
+                    <Route index element={<Home/>}/>
+                    <Route path="commands" element={<Commands />} />
+                </Route>
+        
+            </Routes>
 
-    </AuthProvider>
+        </AuthProvider>
     </BrowserRouter>
   );
 }

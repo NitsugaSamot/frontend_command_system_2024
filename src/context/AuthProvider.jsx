@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import clienteAxios from "../config/clienteAxios"
+import axios from 'axios'
 
 const AuthContext = createContext()
 
@@ -12,6 +13,8 @@ const AuthProvider = ({children}) => {
     const navigate = useNavigate()
 
     useEffect(() => {
+        const backendURL = 'https://backendcommandsystem2024-production.up.railway.app';
+
         const authenticateUser = async () => {
             const token = localStorage.getItem('token')
 
@@ -29,7 +32,7 @@ const AuthProvider = ({children}) => {
             }
             
             try {
-                const {data} = await clienteAxios('/auth/profile', config)
+                const {data} = await axios(`${backendURL}/api/auth/profile`, config)
                 setAuth(data)
                 navigate('/app')
             } catch (error) {
