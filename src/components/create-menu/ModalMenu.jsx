@@ -15,7 +15,7 @@ function ModalMenu({ closeMenuModal }) {
 
   useEffect(() => {
       // Realizar una solicitud HTTP para obtener las categorías disponibles
-      clienteAxios('/menu/categories')
+      clienteAxios('/api/menu/categories')
         .then(response => {
           // Transforma las categorías para que la primera letra esté en mayúscula
           const formattedCategories = response.data.map(category => capitalizeFirstLetter(category));
