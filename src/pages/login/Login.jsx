@@ -4,8 +4,6 @@ import Alert from "../../components/alert/Alert"
 import clienteAxios from "../../config/clienteAxios"
 import useAuth from "../../hooks/useAuth"
 import Logo from '../../../public/chef-logo.jpg'
-import axios from 'axios'
-
 
 const Login = () => {
 
@@ -16,8 +14,6 @@ const Login = () => {
     const {setAuth} = useAuth()
   
     const navigate = useNavigate()
-
-    const backendURL = 'https://backendcommandsystem2024-production.up.railway.app';
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -31,7 +27,7 @@ const Login = () => {
         }
     
         try {
-            const { data } = await axios.post(`${backendURL}/api/auth/login`, { name, password });
+            const { data } = await clienteAxios.post('/api/auth/login', { name, password });
           setAlert({})
           localStorage.setItem('token', data.token)
           setAuth(data)
