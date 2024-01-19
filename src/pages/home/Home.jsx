@@ -3,46 +3,40 @@ import clienteAxios from '../../config/clienteAxios';
 import Header from '../../components/header/Header';
 import ModalCommand from '../../components/new-command/ModalCommand';
 import ModalMenu from '../../components/create-menu/ModalMenu';
+import useAuth from '../../hooks/useAuth';
 import './styles-home.css'
 
 function Home() {
-  const [categoryItems, setCategoryItems] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [menuItems, setMenuItems] = useState([]);
-  const [commandItems, setCommandItems] = useState([]);
-  const [total, setTotal] = useState(0);
-
-    // Nuevo estado para el modal
+    const { auth } = useAuth();
+    const [categoryItems, setCategoryItems] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [menuItems, setMenuItems] = useState([]);
+    const [commandItems, setCommandItems] = useState([]);
+    const [total, setTotal] = useState(0);
 
     const [isModalMenuOpen, setIsModalMenuOpen] = useState(false);
-
     const [isCreateCommandModalOpen, setIsCreateCommandModalOpen] = useState(false);
 
-// ...
+    // Función para abrir el modal de creación de comanda
+    const openCreateCommandModal = () => {
+      setIsCreateCommandModalOpen(true);
+    };
 
-// Función para abrir el modal de creación de comanda
-const openCreateCommandModal = () => {
-  setIsCreateCommandModalOpen(true);
-};
-
-// Función para cerrar el modal de creación de comanda
-const closeCreateCommandModal = () => {
-  setIsCreateCommandModalOpen(false);
-};
+    // Función para cerrar el modal de creación de comanda
+    const closeCreateCommandModal = () => {
+      setIsCreateCommandModalOpen(false);
+    };
 
     // Función para abrir el modal
     const openMenuModal = () => {
       setIsModalMenuOpen(true);
     };
-  
+      
     // Función para cerrar el modal
     const closeMenuModal = () => {
       setIsModalMenuOpen(false);
     };
-  
-    
-
-
+      
   useEffect(() => {
     clienteAxios('/api/menu/categories')
       .then(response => {
@@ -106,7 +100,22 @@ const closeCreateCommandModal = () => {
 
       <Header />
 
-       <div className="command mt-8">
+      {auth.role === "Admin" && (
+        <div className="command mt-8">
+          <button
+            className="bg-blue-500 text-white px-2 py-1 rounded"
+            onClick={() => setIsModalMenuOpen(true)}
+          >
+            Nuevo Menú
+          </button>
+
+          {isModalMenuOpen && (
+            <ModalMenu closeMenuModal={() => setIsModalMenuOpen(false)} />
+          )}
+        </div>
+      )}
+
+       {/* <div className="command mt-8">
           <button className="bg-blue-500 text-white px-2 py-1 rounded" onClick={openMenuModal}>
               Nuevo Menú
           </button>
@@ -114,7 +123,7 @@ const closeCreateCommandModal = () => {
           {isModalMenuOpen && (
                <ModalMenu closeMenuModal={closeMenuModal} />
           )}
-       </div>
+       </div> */}
  
             <div className="flex flex-wrap categories-div">
               {categoryItems.map((categoryItem, index) => (

@@ -46,7 +46,7 @@ function ModalMenu({ closeMenuModal }) {
       setAlert({})
 
       try {
-          const {data} = await clienteAxios.post('/menu', {name, price, category, stock})
+          const {data} = await clienteAxios.post('/api/menu', {name, price, category, stock})
 
           setAlert({
               msg: data.msg,
@@ -75,7 +75,7 @@ function ModalMenu({ closeMenuModal }) {
       className="modal mx-auto max-w-3xl bg-gray-200 rounded-lg p-8 mt-10"
       overlayClassName="overlay"
     >
-        <button className="close-button p-5" onClick={closeMenuModal}>
+        <button className="close-button " onClick={closeMenuModal}>
           X
         </button>
       { msg && <Alert alert={alert}/> }

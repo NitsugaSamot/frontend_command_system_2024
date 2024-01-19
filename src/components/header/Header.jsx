@@ -26,13 +26,13 @@ function Header() {
     
                 <div className="nav-buttons flex items-center gap-4">
     
-                    <button 
+                    {/* <button 
                         type="button"
                         className="font-bold uppercase"
                     >
                         Buscar 
     
-                    </button>
+                    </button> */}
      
                     <Link
                         to='/app/commands'

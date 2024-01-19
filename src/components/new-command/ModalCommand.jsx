@@ -64,7 +64,7 @@ function ModalCommand({closeCreateCommandModal, commandItems}) {
       className="modal text-center mx-auto max-w-3xl bg-gray-200 rounded-lg p-8 mt-10"
       overlayClassName="overlay"
     >
-      <button className="p-3 close-button" onClick={closeCreateCommandModal}>
+      <button className="close-button" onClick={closeCreateCommandModal}>
         X
       </button>
 
