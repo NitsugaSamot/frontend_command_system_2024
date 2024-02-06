@@ -77,7 +77,7 @@ function ModalCommand({closeCreateCommandModal, commandItems}) {
                   </p>
                 ))}
               </div>
-            </div>
+      </div>
 
      
       <form

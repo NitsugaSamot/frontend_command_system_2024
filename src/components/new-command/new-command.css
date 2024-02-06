@@ -1,8 +1,9 @@
 .div-command{
     border-color: brown;
-    background-color: rgb(224, 199, 168);
-    width: 80%;
-    margin: 0 auto;
+    background-color: rgb(238, 231, 223);
+    /* width: 90%; */
+    /* margin: 0 auto; */
+    margin-top: 3rem;
     border-radius: 3%;
     margin-top: 2rem;
     padding: 1rem;

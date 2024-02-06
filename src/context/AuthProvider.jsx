@@ -8,6 +8,11 @@ const AuthProvider = ({children}) => {
 
     const [auth, setAuth] = useState({})
     const [loading, setLoading] = useState(true)
+    const [updateTrigger, setUpdateTrigger] = useState(false);
+
+    const forceUpdate = () => {
+        setUpdateTrigger((prev) => !prev);
+      };
 
     const navigate = useNavigate()
 
@@ -31,6 +36,7 @@ const AuthProvider = ({children}) => {
             
             try {
                 const {data} = await clienteAxios('/api/auth/profile', config)
+                console.log('User Data:', data);
                 setAuth(data)
                 navigate('/app')
             } catch (error) {
@@ -53,7 +59,8 @@ const AuthProvider = ({children}) => {
                 auth,
                 setAuth, 
                 loading,
-                closeSessionAuth
+                closeSessionAuth, 
+                forceUpdate
             }}
         >
 
